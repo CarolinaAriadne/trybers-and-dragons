@@ -38,14 +38,15 @@ class Character implements Fighter {
 
   levelUp(): void {
     const increment = getRandomInt(1, 10);
-    this._maxLifePoints = increment;
-    this._strenght = increment;
-    this._dexterity = increment;
-    this._defense = increment;
+    this._maxLifePoints += increment;
+    this._strenght += increment;
+    this._dexterity += increment;
+    this._defense += increment;
     this._energy.amount = 10;
     if (this._race.maxLifePoints < this._maxLifePoints) {
       this._maxLifePoints = this._race.maxLifePoints;
     }
+    this._lifePoints = this._maxLifePoints;
   }
 
   receiveDamage(attackPoints: number): number {
@@ -86,7 +87,7 @@ class Character implements Fighter {
   }
 
   get energy(): Energy {
-    return this._energy; // ver isso aqui
+    return { ...this._energy };
   }
 }
 
