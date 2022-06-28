@@ -1,21 +1,31 @@
-// import Archetype from './Archetypes';
+// import Archetype, { Mage } from './Archetypes';
 // import Energy from './Energy';
 // import Fighter from './Fighter';
 // import Race, { Elf } from './Races';
+// import getRandomInt from './utils';
 
 // class Character implements Fighter {
 //   private _race: Race;
-//   private archetype: Archetype;
-//   private maxLifePoints: number;
-//   private lifePoints: number;
-//   private strenght: number;
-//   private defense: number;
+//   private _archetype: Archetype;
+//   private _maxLifePoints: number;
+//   private _lifePoints: number;
+//   private _strenght: number;
+//   private _defense: number;
 //   private _dexterity: number;
-//   private energy: Energy;
+//   private _energy: Energy;
 
-//   constructor(dexterity: number) {
-//     this._dexterity = Math.random() * 10 + 1;
-//     this._race = 
+//   constructor(name:string) {
+//     this._dexterity = getRandomInt(1, 10);
+//     this._race = new Elf(name, this._dexterity);
+//     this._archetype = new Mage(name);
+//     this._maxLifePoints = this._race.maxLifePoints / 2;
+//     this._lifePoints = this._maxLifePoints;
+//     this._strenght = getRandomInt(1, 10);
+//     this._defense = getRandomInt(1, 10);
+//     this._energy = {
+//       type_: this._archetype.energyType,
+//       amount: getRandomInt(1, 10),
+//     };
 //   }
 // }
 
